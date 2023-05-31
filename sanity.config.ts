@@ -4,6 +4,8 @@ import { deskTool } from 'sanity/desk';
 
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash';
 
+import { vercelDeployTool } from 'sanity-plugin-vercel-deploy';
+
 import { myStructure } from './helpers/deskStructure';
 import { getStartedPlugin } from './plugins/sanity-plugin-tutorial';
 import { schemaTypes } from './schemas';
@@ -23,6 +25,7 @@ export default defineConfig({
         }),
         visionTool(),
         unsplashImageAsset(),
+        vercelDeployTool(),
         ...(isDev ? devOnlyPlugins : []),
     ],
 
