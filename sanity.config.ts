@@ -3,17 +3,18 @@ import {visionTool} from '@sanity/vision'
 import {deskTool} from 'sanity/desk'
 import {schemaTypes} from './schemas'
 import {getStartedPlugin} from './plugins/sanity-plugin-tutorial'
+import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 
 const devOnlyPlugins = [getStartedPlugin()]
 
 export default defineConfig({
   name: 'default',
-  title: 'seagreen-guanaco',
+  title: 'prikkel',
 
-  projectId: '32yu2nll',
+  projectId: '6w6knwpa',
   dataset: 'production',
 
-  plugins: [deskTool(), visionTool(), ...(isDev ? devOnlyPlugins : [])],
+  plugins: [deskTool(), visionTool(),unsplashImageAsset(), ...(isDev ? devOnlyPlugins : [])],
 
   schema: {
     types: schemaTypes,
