@@ -12,7 +12,7 @@ export default defineType({
             validation: (Rule) => Rule.required(),
         },
         {
-            name: 'Logo',
+            name: 'logo',
             title: 'Logo',
             type: 'image',
             validation: (Rule) => Rule.required(),
