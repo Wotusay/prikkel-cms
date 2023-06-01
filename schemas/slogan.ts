@@ -4,7 +4,7 @@ import { backgroundColor } from './backgroundColor';
 
 export const slogan = {
     name: 'slogan',
-    title: 'Slogan sectie (alleen voor de homepagina)',
+    title: 'Slogan',
     type: 'object',
     fields: [
         {
@@ -78,4 +78,11 @@ export const slogan = {
         },
         backgroundColor,
     ],
+    preview: {
+        prepare() {
+            return {
+                title: `Slogan`,
+            };
+        },
+    },
 };

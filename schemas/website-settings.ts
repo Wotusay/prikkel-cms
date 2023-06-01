@@ -1,4 +1,4 @@
-import { defineType } from 'sanity';
+import { SanityDocument, defineType } from 'sanity';
 
 export default defineType({
     name: 'websiteSettings',
@@ -15,6 +15,21 @@ export default defineType({
             name: 'Logo',
             title: 'Logo',
             type: 'image',
+            validation: (Rule) => Rule.required(),
+        },
+        {
+            name: 'ctaNavigationActive',
+            title: 'Knop in navigatie',
+            type: 'boolean',
+            initialValue: true,
+            validation: (Rule) => Rule.required(),
+        },
+        {
+            name: 'ctaNavigatieText',
+            title: 'Knop in navigatie text',
+            type: 'string',
+            initialValue: 'Boek een sessie',
+            hidden: ({ document }: { document?: SanityDocument }) => !document?.ctaNavigationActive,
             validation: (Rule) => Rule.required(),
         },
     ],
