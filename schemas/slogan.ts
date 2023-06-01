@@ -45,7 +45,10 @@ export const slogan = {
                     { title: 'Rechts', value: 'right' },
                 ],
             },
-            hidden: ({ document }: { document?: SanityDocument }) => (document?.picture ? true : false),
+            hidden: ({ document }: { document?: SanityDocument }) => {
+                const picture: any | undefined = document?.picture;
+                return picture === undefined ? true : false;
+            },
         },
         {
             name: 'activateCta',
