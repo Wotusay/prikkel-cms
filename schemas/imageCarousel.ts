@@ -3,7 +3,7 @@ import { backgroundColor } from './backgroundColor';
 export const imageCarousel = {
     type: 'object',
     name: 'imageCarousel',
-    title: 'Foto Carousel',
+    title: 'Carousel',
     fields: [
         {
             name: 'images',
