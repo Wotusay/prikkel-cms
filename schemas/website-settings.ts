@@ -25,7 +25,7 @@ export default defineType({
             validation: (Rule) => Rule.required(),
         },
         {
-            name: 'ctaNavigatieText',
+            name: 'ctaNavigationText',
             title: 'Knop in navigatie text',
             type: 'string',
             initialValue: 'Boek een sessie',
