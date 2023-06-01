@@ -1,6 +1,4 @@
-import { SlugValue, defineField, defineType } from 'sanity';
-
-import { isUniqueAcrossAllDocuments } from '../helpers/isUnique';
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
     name: 'WebPage',
@@ -12,57 +10,6 @@ export default defineType({
             title: 'Titel pagina',
             type: 'string',
             validation: (Rule) => Rule.required(),
-        }),
-        defineField({
-            name: 'path',
-            title: 'Pagina route',
-            type: 'slug',
-            options: {
-                source: 'title',
-                maxLength: 96,
-                slugify: (input) => {
-                    const inputStr = input.toLowerCase();
-                    const slug = inputStr.replace(/\s+/g, '-').slice(0, 200);
-                    return inputStr === 'home' ? '/' : `/${slug}`;
-                },
-                isUnique: isUniqueAcrossAllDocuments,
-            },
-            validation: (Rule) =>
-                Rule.required()
-                    .error('De pagina route is verplicht.')
-                    .custom((slug?: SlugValue) => {
-                        const _slug = slug?.current;
-                        console.info(_slug);
-                        if (!_slug?.startsWith('/')) {
-                            return 'De pagina route moet met / starten.';
-                        }
-                        if (_slug?.includes(' ')) {
-                            return 'De pagina route moet zonder spacies.';
-                        }
-                        return true;
-                    })
-                    .error(),
-        }),
-        defineField({
-            name: 'setInNavigation',
-            title: 'Zichtbaar in navigatie',
-            type: 'boolean',
-            initialValue: true,
-        }),
-        defineField({
-            name: 'rankingRoute',
-            title: 'Plaats in de navigatie',
-            type: 'number',
-            options: {
-                list: [
-                    { title: 'Plaats 1 ', value: 0 },
-                    { title: 'Plaats 2', value: 1 },
-                    { title: 'Plaats 3', value: 2 },
-                    { title: 'Plaats 4', value: 3 },
-                    { title: 'Plaats 5', value: 4 },
-                ],
-            },
-            hidden: ({ document }) => !document?.setInNavigation,
         }),
         defineField({
             name: 'contentBlocks',
