@@ -71,7 +71,16 @@ export const slogan = {
                     name: 'link',
                     title: 'Knop link',
                     type: 'string',
-                    validation: (Rule: Rule) => Rule.required(),
+                    validation: (Rule: Rule) =>
+                        Rule.custom((string?: string) => {
+                            if (!string?.startsWith('/')) {
+                                return 'De link moet met / starten.';
+                            }
+                            if (string?.includes(' ')) {
+                                return 'De link moet zonder spacies.';
+                            }
+                            return true;
+                        }),
                 },
             ],
             hidden: ({ document }: { document?: SanityDocument }) => !document?.activateCta,

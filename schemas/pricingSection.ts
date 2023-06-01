@@ -1,3 +1,5 @@
+import { backgroundColor } from './backgroundColor';
+
 export const pricingSection = {
     type: 'object',
     name: 'pricingSection',
@@ -38,27 +40,6 @@ export const pricingSection = {
                 },
             ],
         },
-        {
-            name: 'backgroundColor',
-            title: 'Achtergrond kleur',
-            type: 'number',
-            options: {
-                list: [
-                    {
-                        title: 'Wit',
-                        value: 0,
-                    },
-                    {
-                        title: 'Zwart',
-                        value: 1,
-                    },
-                    {
-                        title: 'Lila',
-                        value: 3,
-                    },
-                ],
-            },
-            initialValue: 0,
-        },
+        backgroundColor,
     ],
 };
