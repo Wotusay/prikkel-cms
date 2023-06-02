@@ -15,7 +15,7 @@ export const backgroundColor = {
             },
             {
                 title: 'Lila',
-                value: 3,
+                value: 2,
             },
         ],
     },
