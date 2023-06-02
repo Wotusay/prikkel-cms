@@ -20,6 +20,12 @@ export const imageWithDescriptionTitle = {
             title: 'Foto',
             type: 'image',
         },
+        {
+            name: 'imageLeft',
+            title: 'Foto links',
+            type: 'boolean',
+            initialValue: false,
+        },
         backgroundColor,
     ],
 };
