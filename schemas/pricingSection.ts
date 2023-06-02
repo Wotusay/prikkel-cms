@@ -1,3 +1,5 @@
+import { Rule } from 'sanity';
+
 import { backgroundColor } from './backgroundColor';
 
 export const pricingSection = {
@@ -9,6 +11,12 @@ export const pricingSection = {
             name: 'title',
             title: 'Titel',
             type: 'string',
+            validation: (Rule: Rule) => Rule.required(),
+        },
+        {
+            name: 'description',
+            title: 'Beschrijving',
+            type: 'text',
         },
         {
             name: 'pricing',
@@ -25,16 +33,19 @@ export const pricingSection = {
                             options: {
                                 format: '€0,0.00',
                             },
+                            validation: (Rule: Rule) => Rule.required(),
                         },
                         {
                             name: 'label',
                             title: 'Achter het euro teken',
                             type: 'string',
+                            validation: (Rule: Rule) => Rule.required(),
                         },
                         {
                             name: 'description',
                             title: 'Beschrijving',
                             type: 'text',
+                            validation: (Rule: Rule) => Rule.required(),
                         },
                     ],
                 },

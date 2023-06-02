@@ -1,6 +1,5 @@
 import { defineField } from 'sanity';
 
-import { imageCarousel } from './imageCarousel';
 import { imageWithDescriptionTitle } from './imageWithDescriptionTitle';
 import { pricingSection } from './pricingSection';
 import { section } from './section';
@@ -10,5 +9,5 @@ export const contentBlocks = defineField({
     name: 'contentBlocks',
     title: 'Content blokken',
     type: 'array',
-    of: [imageCarousel, imageWithDescriptionTitle, section, pricingSection, slogan],
+    of: [imageWithDescriptionTitle, section, pricingSection, slogan],
 });
