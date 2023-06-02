@@ -35,8 +35,41 @@ export default defineType({
         {
             name: 'ctaFooterDescription',
             title: 'Voetstuk beschrijving voor knop',
-            type: 'string',
-            initialValue: 'Boek een sessie',
+            type: 'array',
+            of: [
+                {
+                    name: 'rule',
+                    title: 'Regel',
+                    type: 'object',
+                    fields: [
+                        {
+                            name: 'text',
+                            title: 'Tekst',
+                            type: 'string',
+                            validation: (Rule) => Rule.required(),
+                        },
+                        {
+                            name: 'color',
+                            title: 'Kleur',
+                            type: 'number',
+                            validation: (Rule) => Rule.required(),
+                            initialValue: 0,
+                            options: {
+                                list: [
+                                    {
+                                        title: 'Wit',
+                                        value: 0,
+                                    },
+                                    {
+                                        title: 'Lila',
+                                        value: 3,
+                                    },
+                                ],
+                            },
+                        },
+                    ],
+                },
+            ],
             hidden: ({ document }: { document?: SanityDocument }) => !document?.ctaNavigationActive,
             validation: (Rule) => Rule.required(),
         },
