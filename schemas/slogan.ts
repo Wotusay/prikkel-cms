@@ -14,14 +14,6 @@ export const slogan = {
             validation: (Rule: Rule) => Rule.required(),
         },
         {
-            name: 'picture',
-            title: 'Achtergrond afbeelding',
-            type: 'image',
-            options: {
-                hotspot: true,
-            },
-        },
-        {
             name: 'positionSlogan',
             title: 'Positie van de slogan',
             type: 'string',
@@ -33,6 +25,15 @@ export const slogan = {
                 ],
             },
             initialValue: 'middle',
+        },
+        {
+            name: 'picture',
+            title: 'Afbeelding',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+            hidden: ({ parent }: { parent: any }) => parent?.positionSlogan !== 'middle',
         },
         backgroundColor,
     ],
