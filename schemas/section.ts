@@ -5,7 +5,7 @@ import { backgroundColor } from './backgroundColor';
 export const section = {
     type: 'object',
     name: 'section',
-    title: 'Foto met beschrijving, titel en knop',
+    title: 'Sectie met beschrijving, titel en knop (midden)',
     fields: [
         {
             name: 'title',
@@ -36,14 +36,6 @@ export const section = {
                     }
                     return true;
                 }),
-        },
-        {
-            name: 'picture',
-            title: 'Picture',
-            type: 'image',
-            options: {
-                hotspot: true,
-            },
         },
         backgroundColor,
     ],
