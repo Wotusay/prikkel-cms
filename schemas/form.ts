@@ -47,6 +47,21 @@ export default defineType({
                             initialValue: '17u00',
                             validation: (Rule) => Rule.required(),
                         },
+
+                        {
+                            name: 'notWorkingHours',
+                            title: 'Niet werkende uren',
+                            type: 'array',
+                            of: [
+                                {
+                                    name: 'hour',
+                                    title: 'Uur',
+                                    type: 'string',
+                                },
+                            ],
+                            initialValue: ['12u00'],
+                            validation: (Rule) => Rule.required(),
+                        },
                     ],
                 },
             ],
