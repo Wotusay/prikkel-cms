@@ -47,7 +47,6 @@ export default defineType({
                             initialValue: '17u00',
                             validation: (Rule) => Rule.required(),
                         },
-
                         {
                             name: 'notWorkingHours',
                             title: 'Niet werkende uren',
@@ -60,6 +59,13 @@ export default defineType({
                                 },
                             ],
                             initialValue: ['12u00'],
+                            validation: (Rule) => Rule.required(),
+                        },
+                        {
+                            name: 'notWorking',
+                            title: 'Werkdag?',
+                            type: 'boolean',
+                            initialValue: true,
                             validation: (Rule) => Rule.required(),
                         },
                     ],
