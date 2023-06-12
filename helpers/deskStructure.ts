@@ -8,12 +8,17 @@ export const myStructure = (S: any) =>
             S.listItem()
                 .title('Website instellingen')
                 .child(S.document().schemaType('websiteSettings').documentId('websiteSettings')),
-            S.listItem()
-                .title('Formulier instellingen')
-                .child(S.document().schemaType('form').documentId('form')),
+            // S.listItem()
+            //     .title('Formulier instellingen')
+            //     .child(S.document().schemaType('form').documentId('form')),
 
             ...S.documentTypeListItems().filter(
                 (listItem: any) =>
-                    !['footer', 'websiteSettings', 'media.tag', 'form'].includes(listItem.getId()),
+                    ![
+                        'footer',
+                        'websiteSettings',
+                        'media.tag',
+                        // 'form'
+                    ].includes(listItem.getId()),
             ),
         ]);
