@@ -59,7 +59,6 @@ export default defineType({
                                 },
                             ],
                             initialValue: ['12u00'],
-                            validation: (Rule) => Rule.required(),
                         },
                         {
                             name: 'notWorking',
